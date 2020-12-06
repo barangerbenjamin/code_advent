@@ -24,4 +24,9 @@ for boarding in boardings:
     cols = front if letter == 'L' else back
   seats.append(rows[0] * 8 + cols[0])
 
-print(max(seats))
+seats = sorted(seats)
+max_i = len(seats) - 1
+for i, s in enumerate(seats):
+  if i != max_i:
+    if seats[i + 1] != s + 1:
+      print('seat is', s + 1)
